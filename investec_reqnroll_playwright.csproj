@@ -4,16 +4,46 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <OutputType>Library</OutputType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Allure.Reqnroll" Version="2.12.1"/>
-        <PackageReference Include="Microsoft.Playwright" Version="1.55.0"/>
-        <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.55.0"/>
+        <!-- <PackageReference Include="Allure.Net.Commons" Version="2.12.1" /> -->
+        <!-- <PackageReference Include="Allure.Reqnroll" Version="2.12.1"/> -->
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0-rc.1.25451.107" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.0-rc.1.25451.107" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.0-rc.1.25451.107" />
+        <PackageReference Include="Microsoft.Playwright" Version="1.55.0" />
+        <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.55.0" />
         <PackageReference Include="NUnit3TestAdapter" Version="5.1.0" />
-        <PackageReference Include="Reqnroll" Version="3.0.2"/>
-        <PackageReference Include="Reqnroll.NUnit" Version="3.0.2"/>
-        <PackageReference Include="Reqnroll.Tools.MsBuild.Generation" Version="3.0.2"/>
+        <PackageReference Include="Reqnroll" Version="3.0.2" />
+        <PackageReference Include="Reqnroll.NUnit" Version="3.0.2" />
+        <PackageReference Include="Reqnroll.Tools.MsBuild.Generation" Version="3.0.2" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+        <PackageReference Include="RestSharp" Version="110.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="PlaywrightUI\Features\cashinvestmentrates.feature.cs">
+        <DependentUpon>cashinvestmentrates.feature</DependentUpon>
+        <AutoGen>true</AutoGen>
+        <DesignTime>true</DesignTime>
+        <Visible>true</Visible>
+      </Compile>
+      <Compile Update="PlaywrightUI\Features\cashinvestmentrates.feature.cs">
+        <DependentUpon>cashinvestmentrates.feature</DependentUpon>
+        <AutoGen>true</AutoGen>
+        <DesignTime>true</DesignTime>
+        <Visible>true</Visible>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Features\cashinvestmentrates.feature" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckBuild Remove="Features\cashinvestmentrates.feature.cs" />
     </ItemGroup>
 
 </Project>
