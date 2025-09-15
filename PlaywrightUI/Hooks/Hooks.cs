@@ -14,10 +14,19 @@ public class Hooks
     [BeforeScenario]
     public async Task Setup()
     {
-        _playwright = await Playwright.CreateAsync();
-        _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false, Channel = "chrome", Timeout = 60000});
-        _browserContext = await _browser.NewContextAsync();
-        _page = await _browser.NewPageAsync();
+
+    }
+    [BeforeStep]
+    public async Task InitiateBrowserIfNeeded()
+    {
+        var stepText = ScenarioStepContext.Current.StepInfo.Text;
+        if (stepText.Contains("I navigate to"))
+        {
+            _playwright = await Playwright.CreateAsync();
+            _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false, Channel = "chrome", Timeout = 60000});
+            _browserContext = await _browser.NewContextAsync();
+            _page = await _browser.NewPageAsync();
+        }
     }
 
     [AfterScenario]

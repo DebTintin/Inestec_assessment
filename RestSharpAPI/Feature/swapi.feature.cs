@@ -11,7 +11,7 @@
 #region Designer generated code
 #pragma warning disable
 using Reqnroll;
-namespace investec_reqnroll_playwright.RestSharpAPI
+namespace investec_reqnroll_playwright.RestSharpAPI.Feature
 {
     
     
@@ -27,7 +27,7 @@ namespace investec_reqnroll_playwright.RestSharpAPI
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "RestSharpAPI", "Star Wars API People Endpoint", "  As a Star Wars fan\r\n  I want to retrieve people data from the Star Wars API\r\n  " +
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "RestSharpAPI/Feature", "Star Wars API People Endpoint", "  As a Star Wars fan\r\n  I want to retrieve people data from the Star Wars API\r\n  " +
                 "So that I can verify the API is working", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
 #line 1 "swapi.feature"
@@ -106,17 +106,17 @@ namespace investec_reqnroll_playwright.RestSharpAPI
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("RestSharpAPI/swapi.feature", 3);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("RestSharpAPI/Feature/swapi.feature", 3);
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Get people from the Star Wars API")]
-        public async global::System.Threading.Tasks.Task GetPeopleFromTheStarWarsAPI()
+        [global::NUnit.Framework.DescriptionAttribute("Search for a specific record in the Star Wars API")]
+        public async global::System.Threading.Tasks.Task SearchForASpecificRecordInTheStarWarsAPI()
         {
             string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Get people from the Star Wars API", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search for a specific record in the Star Wars API", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 6
@@ -130,10 +130,10 @@ namespace investec_reqnroll_playwright.RestSharpAPI
             {
                 await this.ScenarioStartAsync();
 #line 7
-    await testRunner.WhenAsync("I send a GET request to \"https://swapi.dev/api/people/\" with browser headers", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("I search for R2-D2 in the Star Wars API people endpoint", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 8
-    await testRunner.ThenAsync("display the response content", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+    await testRunner.ThenAsync("the skin color should contain both white and blue", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
